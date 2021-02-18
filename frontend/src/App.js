@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import CartView from "./views/CartView";
 
 import HomeView from "./views/HomeView";
 import ProductView from "./views/ProductView";
-
 
 export default class App extends Component {
   render() {
@@ -12,7 +12,9 @@ export default class App extends Component {
         <div className="grid-container">
           <header className="row">
             <div>
-              <a className="brand" href="/">Folia</a>
+              <a className="brand" href="/">
+                Folia
+              </a>
             </div>
             <div>
               <a href="/cart">Cart</a>
@@ -20,12 +22,13 @@ export default class App extends Component {
             </div>
           </header>
           <main>
+            <Route exact path="/cart/:id?" component={CartView} />
             <Route exact path="/product/:id" component={ProductView} />
             <Route exact path="/" component={HomeView} />
           </main>
           <footer className="row center">All rights reserved</footer>
         </div>
       </BrowserRouter>
-    )
+    );
   }
 }

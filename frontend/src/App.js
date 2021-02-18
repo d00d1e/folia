@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import Product from "./components/Product";
-import data from './data';
+import { BrowserRouter, Route } from 'react-router-dom';
+import HomeView from "./views/HomeView";
+import ProductView from "./views/ProductView";
+
 
 export default class App extends Component {
   render() {
     return (
-      <div className="App">
+      <BrowserRouter>
         <div className="grid-container">
           <header className="row">
             <div>
@@ -17,15 +19,12 @@ export default class App extends Component {
             </div>
           </header>
           <main>
-            <div className="row center">
-              {data.products.map(product => (
-                <Product key={product._id} product={product} />
-              ))}
-            </div>
+            <Route exact path="/product/:id" component={ProductView} />
+            <Route exact path="/" component={HomeView} />
           </main>
           <footer className="row center">All rights reserved</footer>
         </div>
-      </div>
+      </BrowserRouter>
     )
   }
 }

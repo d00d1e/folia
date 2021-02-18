@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+
 /* 16px X 62.5 = 10px = 1rem */
 /* image size 680px x 830px */
 
@@ -10,8 +12,12 @@ html {
 body {
   margin: 0;
   height: 100vh;
+  min-height: 100%;
   font-size: 1.6rem;
   font-family: "Work Sans", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none;
 }
 
 #root {
@@ -55,6 +61,16 @@ a:hover {
   color: #eee;
 }
 
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+li {
+  margin-top: 1.5rem;
+}
+
 h1 {
   font-size: 1.8rem;
   padding: 1rem 0;
@@ -63,6 +79,30 @@ h1 {
 h2 {
   font-size: 1.6rem;
   padding: 1rem 0;
+}
+
+button {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #a4a4a4;
+  font-size: 1.6rem;
+  font-family: "Work Sans", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 0.1rem solid #404040;
+}
+
+button.primary {
+  background-color: #f1c661;
+}
+
+button.block {
+  width: 100%;
 }
 
 /* HEADER */
@@ -88,6 +128,18 @@ a.brand {
   justify-content: center;
 }
 
+.row.top {
+  align-items: flex-start;
+}
+
+.col-1 {
+  flex: 1 1 25rem;
+}
+
+.col-2 {
+  flex: 2 1 50rem;
+}
+
 /* IMAGES */
 img {
   border-radius: 0.5rem;
@@ -96,6 +148,9 @@ img {
 img.medium {
   max-width: 29rem;
   width: 100%;
+}
+img.large {
+  width: 98%;
 }
 
 /* CARD */
@@ -126,4 +181,13 @@ img.medium {
 
 .rating span:last-child {
   color: #404040;
+}
+
+/* ALERT */
+.success {
+  color: #5cb85c;
+}
+
+.danger {
+  color: #d9534f;
 }

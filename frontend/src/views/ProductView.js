@@ -41,10 +41,10 @@ export default function ProductView(props) {
                   <div>Status</div>
                   <div className="status">
                     {product.countInStock > 0 ? (
-                        <span className="success">{product.countInStock} left in stock!</span>
-                      ) : (
-                        <span className="danger">Out of Stock</span>
-                      )}
+                      <span className="success">{product.countInStock} left in stock!</span>
+                    ) : (
+                      <span className="danger">Out of Stock</span>
+                    )}
                   </div>
                 </div>
               </li>

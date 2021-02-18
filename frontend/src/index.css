@@ -184,10 +184,35 @@ img.large {
 }
 
 /* ALERT */
+.loading {
+  display: block !important;
+}
+
 .success {
   color: #5cb85c;
 }
 
 .danger {
   color: #d9534f;
+}
+
+.alert {
+  padding: 1rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+}
+
+.alert-info {
+  color: #14a3b8;
+  background-color: #e0e0ff;
+}
+
+.alert-danger {
+  color: #d9534f;
+  background-color: #ffe0e0;
+}
+
+.alert-success {
+  color: #5cb85c;
+  background-color: #eeffe0;
 }

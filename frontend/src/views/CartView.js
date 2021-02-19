@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import MessageBox from "../components/MessageBox";
 
-import { addToCart } from "../actions/cartActions";
+import { addToCart, removeFromCart } from "../actions/cartActions";
 
 export default function CartView(props) {
   const productId = props.match.params.id;
@@ -23,7 +23,7 @@ export default function CartView(props) {
   }, [dispatch, productId, qty]);
 
   const removeFromCartHandler = (id) => {
-    // delete action
+    dispatch(removeFromCart(id));
   };
 
   const checkoutHandler = () => {
@@ -33,6 +33,9 @@ export default function CartView(props) {
   return (
     <div className="row top">
       <div className="col-2">
+        <Link to="/">
+          <i className="fas fa-chevron-left"></i> Continue Shopping
+        </Link>
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (
           <MessageBox>

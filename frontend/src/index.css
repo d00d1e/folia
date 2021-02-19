@@ -4,6 +4,11 @@
 /* 16px X 62.5 = 10px = 1rem */
 /* image size 680px x 830px */
 
+/* --light-green: #7DB08F */
+/* --green: #3e5a53 */
+/* --dark-green: #164733 */
+/* --extra-dark: #1B352C */
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -17,7 +22,6 @@ body {
   font-family: "Work Sans", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overscroll-behavior-y: none;
 }
 
 #root {
@@ -32,7 +36,7 @@ body {
     "main"
     "footer";
   grid-template-columns: 1fr;
-  grid-template-rows: 6rem 1fr 5rem;
+  grid-template-rows: 10rem 1fr 5rem;
   height: 100%;
 }
 
@@ -49,7 +53,7 @@ main {
 footer {
   grid-area: footer;
   color: #fff;
-  background-color: #164733;
+  background-color: #1b352c;
 }
 
 /* GLOBAL */
@@ -58,7 +62,7 @@ a {
 }
 
 a:hover {
-  color: #eee;
+  color: #3e5a53;
 }
 
 ul {
@@ -115,15 +119,20 @@ button.block {
 }
 
 /* HEADER */
+header {
+  padding: 0 2.3rem;
+}
+
 header a {
-  color: #164733;
+  color: #1b352c;
   padding: 1rem;
+  text-transform: uppercase;
 }
 
 a.brand {
-  color: #164733;
-  font-size: 3rem;
-  font-weight: bold;
+  font-family: "Cedarville Cursive", cursive;
+  text-transform: none;
+  font-size: 5rem;
 }
 
 .badge {
@@ -183,7 +192,7 @@ img.large {
 
 /* CARD */
 .card {
-  border: 0.1rem #c0c0c0 solid;
+  border: 0.1rem #fff solid;
   background-color: #f8f8f8;
   border-radius: 0.5rem;
   margin: 1rem;
@@ -275,11 +284,11 @@ img.large {
   position: absolute;
   display: none;
   right: 0;
-  min-width: 9rem;
+  min-width: 10rem;
   padding: 0.3rem;
   z-index: 1;
   margin: 0;
-  margin-top: 0.4rem;
+  margin: 0.4rem 0.9rem 0 0;
   border-radius: 0.5rem;
 }
 
@@ -287,7 +296,7 @@ img.large {
 .dropdown:hover .dropdown-content a {
   display: block;
   border: 1px solid #f1c661;
-  color: #164733;
+  color: #1b352c;
 }
 
 .dropdown:hover .dropdown-content a:hover {

@@ -7,6 +7,7 @@ import HomeView from "./views/HomeView";
 import ProductView from "./views/ProductView";
 import SigninView from "./views/SigninView";
 import { signout } from "./actions/userActions";
+import RegisterView from "./views/RegisterView";
 
 export default function App() {
   const cart = useSelector((state) => state.cart);
@@ -26,7 +27,8 @@ export default function App() {
         <header className="row">
           <div>
             <Link className="brand" to="/">
-              Folia
+              folia
+              <i className="fab fa-pagelines"></i>
             </Link>
           </div>
           <div>
@@ -56,6 +58,7 @@ export default function App() {
           <Route exact path="/cart/:id?" component={CartView} />
           <Route exact path="/product/:id" component={ProductView} />
           <Route exact path="/signin" component={SigninView} />
+          <Route exact path="/register" component={RegisterView} />
           <Route exact path="/" component={HomeView} />
         </main>
         <footer className="row center">All rights reserved</footer>

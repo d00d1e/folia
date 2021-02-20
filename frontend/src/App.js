@@ -1,15 +1,17 @@
 import React from "react";
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import CartView from "./views/CartView";
 
+import { signout } from "./actions/userActions";
+
+import CartView from "./views/CartView";
 import HomeView from "./views/HomeView";
 import ProductView from "./views/ProductView";
 import SigninView from "./views/SigninView";
-import { signout } from "./actions/userActions";
 import RegisterView from "./views/RegisterView";
 import ShippingView from "./views/ShippingView";
 import PaymentView from "./views/PaymentView";
+import OrderView from "./views/OrderView";
 
 export default function App() {
   const cart = useSelector((state) => state.cart);
@@ -65,6 +67,7 @@ export default function App() {
           <Route exact path="/register" component={RegisterView} />
           <Route exact path="/shipping" component={ShippingView} />
           <Route exact path="/payment" component={PaymentView} />
+          <Route exact path="/order" component={OrderView} />
           <Route exact path="/" component={HomeView} />
         </main>
         <footer className="row center">All rights reserved</footer>

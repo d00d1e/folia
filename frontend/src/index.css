@@ -1,13 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
 
 /* 16px X 62.5 = 10px = 1rem */
 /* image size 680px x 830px */
 
-/* --light-green: #7DB08F */
 /* --green: #3e5a53 */
+/* --light-green: #7DB08F */
 /* --dark-green: #164733 */
 /* --extra-dark: #1B352C */
+/* --gold: #f1c661 */
+/* --rose-gode: #bd8c7d */
 
 html {
   font-size: 62.5%;
@@ -19,7 +21,7 @@ body {
   height: 100vh;
   min-height: 100%;
   font-size: 1.6rem;
-  font-family: "Work Sans", Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -57,6 +59,9 @@ footer {
 }
 
 /* GLOBAL */
+br {
+  color: red;
+}
 a {
   text-decoration: none;
 }
@@ -196,8 +201,7 @@ img.large {
 
 /* CARD */
 .card {
-  border: 0.1rem #fff solid;
-  background-color: #f8f8f8;
+  background-color: #fff;
   border-radius: 0.5rem;
   margin: 1rem;
 }
@@ -208,6 +212,10 @@ img.large {
 
 .card-body > * {
   margin-bottom: 0.5rem;
+}
+
+.border {
+  border: 0.1rem #ddd solid;
 }
 
 .price {

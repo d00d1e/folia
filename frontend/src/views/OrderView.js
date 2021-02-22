@@ -103,6 +103,7 @@ export default function OrderView(props) {
                     <div>${cart.shippingPrice.toFixed(2)}</div>
                   </div>
                 </li>
+                <hr />
                 <li>
                   <div className="row">
                     <div>

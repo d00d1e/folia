@@ -10,6 +10,7 @@
 /* --extra-dark: #1B352C */
 /* --gold: #f1c661 */
 /* --rose-gode: #bd8c7d */
+/* --light-gray: #e7e7e7 */
 
 html {
   font-size: 62.5%;
@@ -104,7 +105,7 @@ button {
 }
 
 button {
-  background-color: #f8f8f8;
+  background-color: #e7e7e7;
   cursor: pointer;
 }
 
@@ -215,7 +216,16 @@ img.large {
 }
 
 .border {
-  border: 0.1rem #ddd solid;
+  border: 0.1rem #e7e7e7 solid;
+}
+
+hr {
+  background-color: transparent;
+  border-top: 1px solid #e7e7e7;
+  /* line-height: 19px; */
+  /* border-style: inset; */
+  /* overflow: hidden; */
+  width: 90%;
 }
 
 .price {
@@ -316,8 +326,8 @@ img.large {
 
 /* CHECKOUT STEPS */
 .checkout-steps > div {
-  border-top: 0.3rem solid #c0c0c0;
-  color: #c0c0c0;
+  border-top: 0.3rem solid #e7e7e7;
+  color: #e7e7e7;
   flex: 1;
   padding: 1rem;
   font-weight: bold;

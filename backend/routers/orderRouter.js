@@ -13,8 +13,8 @@ orderRouter.post(
       res.status(400).send({ message: "Cart is empty" });
     } else {
       const order = new Order({
-        ordeerItems: req.body.orderItems,
-        shippingAddres: req.body.shippingAddres,
+        orderItems: req.body.orderItems,
+        shippingAddress: req.body.shippingAddress,
         paymentMethod: req.body.paymentMethod,
         itemsPrice: req.body.itemsPrice,
         shippingPrice: req.body.shippingPrice,

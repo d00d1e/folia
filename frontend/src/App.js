@@ -12,6 +12,7 @@ import RegisterView from "./views/RegisterView";
 import ShippingView from "./views/ShippingView";
 import PaymentView from "./views/PaymentView";
 import OrderView from "./views/OrderView";
+import OrderDetailsView from "./views/OrderDetailsView";
 
 export default function App() {
   const cart = useSelector((state) => state.cart);
@@ -68,6 +69,7 @@ export default function App() {
           <Route exact path="/shipping" component={ShippingView} />
           <Route exact path="/payment" component={PaymentView} />
           <Route exact path="/order" component={OrderView} />
+          <Route exact path="/order/:id" component={OrderDetailsView} />
           <Route exact path="/" component={HomeView} />
         </main>
         <footer className="row center">All rights reserved</footer>

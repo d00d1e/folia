@@ -13,6 +13,7 @@ import ShippingView from "./views/ShippingView";
 import PaymentView from "./views/PaymentView";
 import OrderView from "./views/OrderView";
 import OrderDetailsView from "./views/OrderDetailsView";
+import OrderHistoryView from "./views/OrderHistoryView";
 
 export default function App() {
   const cart = useSelector((state) => state.cart);
@@ -51,9 +52,14 @@ export default function App() {
                   {userInfo.name} <i className="fa fa-caret-down"></i>
                 </Link>
                 <ul className="dropdown-content">
-                  <Link to="#signout" onClick={signoutHandler}>
-                    Sign Out
-                  </Link>
+                  <li>
+                    <Link to="/orderhistory">Orders</Link>
+                  </li>
+                  <li>
+                    <Link to="#signout" onClick={signoutHandler}>
+                      Sign Out
+                    </Link>
+                  </li>
                 </ul>
               </div>
             ) : (
@@ -70,6 +76,7 @@ export default function App() {
           <Route exact path="/payment" component={PaymentView} />
           <Route exact path="/order" component={OrderView} />
           <Route exact path="/order/:id" component={OrderDetailsView} />
+          <Route exact path="/orderhistory" component={OrderHistoryView} />
           <Route exact path="/" component={HomeView} />
         </main>
         <footer className="row center">All rights reserved</footer>

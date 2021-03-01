@@ -10,6 +10,7 @@ import {
 import { productDetailsReducer } from "./reducers/productReducers";
 import { productListReducer } from "./reducers/productReducers";
 import {
+  userDetailsReducer,
   userRegisterReducer,
   userSigninReducer,
 } from "./reducers/userReducers";
@@ -42,6 +43,7 @@ const reducer = combineReducers({
   orderDetails: orderDetailsReducer,
   orderPay: orderPayReducer,
   orderList: orderListReducer,
+  userDetails: userDetailsReducer,
 });
 
 // connect app to store (see contents of state in redux devtools)

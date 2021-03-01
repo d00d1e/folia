@@ -309,19 +309,19 @@ hr {
   position: absolute;
   display: none;
   right: 0;
-  min-width: 10rem;
-  padding: 0.3rem;
+  min-width: 15rem;
+  padding: 0.2rem;
   z-index: 1;
-  margin: 0;
   margin: 0.4rem 0.9rem 0 0;
   border-radius: 0.5rem;
+  border: 0.1rem #e7e7e7 solid;
 }
 
 .dropdown:hover .dropdown-content,
 .dropdown:hover .dropdown-content a {
   display: block;
-  border: 1px solid #f1c661;
   color: #1b352c;
+  text-align: center;
 }
 
 .dropdown:hover .dropdown-content a:hover {

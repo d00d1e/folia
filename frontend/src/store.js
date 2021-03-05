@@ -13,6 +13,7 @@ import {
   userDetailsReducer,
   userRegisterReducer,
   userSigninReducer,
+  userUpdateProfileReducer,
 } from "./reducers/userReducers";
 
 const initialState = {
@@ -44,6 +45,7 @@ const reducer = combineReducers({
   orderPay: orderPayReducer,
   orderList: orderListReducer,
   userDetails: userDetailsReducer,
+  userUpdateProfile: userUpdateProfileReducer,
 });
 
 // connect app to store (see contents of state in redux devtools)

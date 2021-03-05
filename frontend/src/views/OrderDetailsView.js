@@ -90,7 +90,7 @@ export default function OrderDetailsView(props) {
                 <p>{order.paymentMethod}</p>
                 {order.isPaid ? (
                   <MessageBox variant="success">
-                    Paid at {order.paidAt}
+                    Paid {order.paidAt.substring(0, 10)}
                   </MessageBox>
                 ) : (
                   <MessageBox variant="danger">Not Paid</MessageBox>

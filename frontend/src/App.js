@@ -16,6 +16,8 @@ import OrderDetailsView from "./views/OrderDetailsView";
 import OrderHistoryView from "./views/OrderHistoryView";
 import ProfileView from "./views/ProfileView";
 import PrivateRoute from "./components/PrivateRoute";
+import AdminRoute from "./components/AdminRoute";
+import ProductListView from "./views/ProductListView";
 
 export default function App() {
   const cart = useSelector((state) => state.cart);
@@ -104,6 +106,7 @@ export default function App() {
           <Route exact path="/order/:id" component={OrderDetailsView} />
           <Route exact path="/orderhistory" component={OrderHistoryView} />
           <PrivateRoute exact path="/profile" component={ProfileView} />
+          <AdminRoute exact path="/productlist" component={ProductListView} />
           <Route exact path="/" component={HomeView} />
         </main>
         <footer className="row center">All rights reserved</footer>

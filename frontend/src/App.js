@@ -18,6 +18,7 @@ import ProfileView from "./views/ProfileView";
 import PrivateRoute from "./components/PrivateRoute";
 import AdminRoute from "./components/AdminRoute";
 import ProductListView from "./views/ProductListView";
+import ProductEditView from "./views/ProductEditView";
 
 export default function App() {
   const cart = useSelector((state) => state.cart);
@@ -98,6 +99,7 @@ export default function App() {
         <main>
           <Route exact path="/cart/:id?" component={CartView} />
           <Route exact path="/product/:id" component={ProductView} />
+          <Route exact path="/product/:id/edit" component={ProductEditView} />
           <Route exact path="/signin" component={SigninView} />
           <Route exact path="/register" component={RegisterView} />
           <Route exact path="/shipping" component={ShippingView} />

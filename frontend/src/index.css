@@ -197,7 +197,7 @@ img.small {
 }
 
 img.medium {
-  max-width: 29rem;
+  max-width: 35rem;
   width: 100%;
 }
 img.large {
@@ -207,12 +207,12 @@ img.large {
 /* CARD */
 .card {
   background-color: #fff;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
   margin: 1rem;
 }
 
 .card-body {
-  padding: 1rem;
+  padding: 0.1rem 0 0.5rem 0;
 }
 
 .card-body > * {
@@ -232,8 +232,21 @@ hr {
   width: 90%;
 }
 
-.price {
-  font-size: 2rem;
+.product-name {
+  font-size: 1.7rem;
+  padding: 0;
+}
+
+.product-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1rem;
+}
+
+.product-price {
+  font-size: 1.7rem;
 }
 
 /* RATING */

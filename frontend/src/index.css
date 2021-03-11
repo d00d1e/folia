@@ -25,6 +25,10 @@ body {
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #fff url("../src/images/background-img.png") no-repeat center
+    center fixed;
+  background-size: cover;
+  overscroll-behavior: none;
 }
 
 #root {
@@ -45,7 +49,7 @@ body {
 
 header {
   grid-area: header;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 main {
@@ -200,6 +204,7 @@ img.medium {
   max-width: 35rem;
   width: 100%;
 }
+
 img.large {
   width: 98%;
 }
@@ -359,6 +364,7 @@ hr {
 .table {
   width: 100%;
   border-collapse: collapse;
+  background-color: #fff;
 }
 
 .table tbody tr:nth-of-type(odd) {
@@ -374,4 +380,12 @@ hr {
 
 .table button {
   margin: 0 0.2rem;
+}
+
+@media (min-width: 768px) {
+  body {
+    background: #fff url("../src/images/background-img.png") no-repeat center
+      center fixed;
+    background-size: cover;
+  }
 }

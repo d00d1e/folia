@@ -44,7 +44,9 @@ export default function ProductListView(props) {
   }, [createdProduct, dispatch, props.history, successCreate, successDelete]);
 
   const deleteHandler = (product) => {
-    dispatch(deleteProduct(product._id));
+    if (window.confirm("Are you sure to delete?")) {
+      dispatch(deleteProduct(product._id));
+    }
   };
 
   const createHandler = () => {
@@ -59,10 +61,10 @@ export default function ProductListView(props) {
           Create Product
         </button>
       </div>
-      {loadingCreate && <LoadingBox />}
-      {errorCreate && <MessageBox variant="danger ">{errorCreate}</MessageBox>}
       {loadingDelete && <LoadingBox />}
       {errorDelete && <MessageBox variant="danger ">{errorDelete}</MessageBox>}
+      {loadingCreate && <LoadingBox />}
+      {errorCreate && <MessageBox variant="danger ">{errorCreate}</MessageBox>}
       {loading ? (
         <LoadingBox />
       ) : error ? (

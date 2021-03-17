@@ -93,7 +93,7 @@ productRouter.delete(
     const product = await Product.findById(req.params.id);
     if (product) {
       const deleteProduct = await product.remove();
-      res.send({ message: "Product Deleted", deletedProduct });
+      res.send({ message: "Product Deleted", deleteProduct });
     } else {
       res.status(404).send({ message: "Product Not Found " });
     }

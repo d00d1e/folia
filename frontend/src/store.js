@@ -3,7 +3,9 @@ import thunk from "redux-thunk";
 import { cartReducer } from "./reducers/cartReducers";
 import {
   orderCreateReducer,
+  orderDeleteReducer,
   orderDetailsReducer,
+  orderListAdminReducer,
   orderListReducer,
   orderPayReducer,
 } from "./reducers/orderReducers";
@@ -54,6 +56,8 @@ const reducer = combineReducers({
   productCreate: productCreateReducer,
   productUpdate: productUpdateReducer,
   productDelete: productDeleteReducer,
+  orderListAdmin: orderListAdminReducer,
+  orderDelete: orderDeleteReducer,
 });
 
 // connect app to store (see contents of state in redux devtools)

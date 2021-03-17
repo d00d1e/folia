@@ -1,25 +1,38 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { listOrderAdmin } from "../actions/orderActions";
+import { deleteOrder, listOrderAdmin } from "../actions/orderActions";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
+import { ORDER_DELETE_RESET } from "../constants/orderConstants";
 
 export default function OrderHistoryAdminView(props) {
   const orderListAdmin = useSelector((state) => state.orderListAdmin);
   const { loading, error, orders } = orderListAdmin;
 
+  const orderDelete = useSelector((state) => state.orderDelete);
+  const {
+    loading: loadingDelete,
+    error: errorDelete,
+    success: successDelete,
+  } = orderDelete;
+
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch({ type: ORDER_DELETE_RESET });
     dispatch(listOrderAdmin());
-  }, [dispatch]);
+  }, [dispatch, successDelete]);
 
-  const deleteHandler = () => {
-    // delete order
+  const deleteHandler = (order) => {
+    if (window.confirm("Delete Order?")) {
+      dispatch(deleteOrder(order._id));
+    }
   };
 
   return (
     <div>
       <h1>Orders</h1>
+      {loadingDelete && <LoadingBox />}
+      {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
       {loading ? (
         <LoadingBox />
       ) : error ? (

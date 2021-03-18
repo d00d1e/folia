@@ -4,6 +4,7 @@ import { cartReducer } from "./reducers/cartReducers";
 import {
   orderCreateReducer,
   orderDeleteReducer,
+  orderDeliverReducer,
   orderDetailsReducer,
   orderListAdminReducer,
   orderListReducer,
@@ -58,6 +59,7 @@ const reducer = combineReducers({
   productDelete: productDeleteReducer,
   orderListAdmin: orderListAdminReducer,
   orderDelete: orderDeleteReducer,
+  orderDeliver: orderDeliverReducer,
 });
 
 // connect app to store (see contents of state in redux devtools)

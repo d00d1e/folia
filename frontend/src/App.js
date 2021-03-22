@@ -21,6 +21,8 @@ import ProductListView from "./views/ProductListView";
 import ProductEditView from "./views/ProductEditView";
 import OrderHistoryAdminView from "./views/OrderHistoryAdminView";
 
+import leafImg from "./img/leaf.png";
+
 export default function App() {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
@@ -40,9 +42,7 @@ export default function App() {
           <div>
             <Link className="brand" to="/">
               folia
-              <sup>
-                <i className="fab fa-pagelines fa-xs"></i>
-              </sup>
+              <img src={leafImg} alt="" />
             </Link>
           </div>
           <div>

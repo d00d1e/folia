@@ -6,6 +6,7 @@ import MessageBox from "../components/MessageBox";
 
 import { useSelector, useDispatch } from "react-redux";
 import { listProducts } from "../actions/productActions";
+import Hero from "./Hero";
 
 export default function HomeView() {
   const dispatch = useDispatch(); //dispatch redux action inside components
@@ -17,18 +18,22 @@ export default function HomeView() {
   }, [dispatch]);
 
   return (
-    <div>
-      {loading ? (
-        <LoadingBox />
-      ) : error ? (
-        <MessageBox variant="danger">{error}</MessageBox>
-      ) : (
-        <div className="row center">
-          {products.map((product) => (
-            <Product key={product._id} product={product} />
-          ))}
-        </div>
-      )}
-    </div>
+    <>
+      <Hero />
+      <h2 className="home-header">The Folia collection</h2>
+      <div>
+        {loading ? (
+          <LoadingBox />
+        ) : error ? (
+          <MessageBox variant="danger">{error}</MessageBox>
+        ) : (
+          <div className="row center">
+            {products.map((product) => (
+              <Product key={product._id} product={product} />
+            ))}
+          </div>
+        )}
+      </div>
+    </>
   );
 }

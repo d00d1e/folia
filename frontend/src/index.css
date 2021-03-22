@@ -53,13 +53,56 @@ header {
 
 main {
   grid-area: main;
-  padding: 3rem;
+  padding: 0 2rem;
 }
 
 footer {
   grid-area: footer;
   color: #fff;
   background-color: #1b352c;
+}
+
+/* HERO */
+.hero {
+  background: url(./img/hero-img.jpg) center center/cover;
+  background-position: 20% 45%;
+  width: 100%;
+  height: 50vh;
+  margin: 0;
+  position: relative;
+  z-index: -1;
+}
+
+.hero::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: -2;
+}
+
+.hero-text {
+  font-family: "Cedarville Cursive", cursive;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text h1 {
+  color: #fff;
+  font-size: 7rem;
+}
+
+.home-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 2rem;
 }
 
 /* GLOBAL */
@@ -191,7 +234,7 @@ a.brand {
 
 /* IMAGES */
 img {
-  border-radius: 0.5rem;
+  border-radius: 0.1rem;
 }
 
 img.small {
@@ -211,7 +254,6 @@ img.large {
 /* CARD */
 .card {
   background-color: #fff;
-  /* border-radius: 0.5rem; */
   margin: 1rem;
 }
 
@@ -231,14 +273,11 @@ img.large {
 hr {
   background-color: transparent;
   border-top: 1px solid #e7e7e7;
-  /* line-height: 19px; */
-  /* border-style: inset; */
-  /* overflow: hidden; */
   width: 90%;
 }
 
 .product-name {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   padding: 0;
 }
 
@@ -251,7 +290,7 @@ hr {
 }
 
 .product-price {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 
 /* RATING */
@@ -382,10 +421,19 @@ hr {
   margin: 0 0.2rem;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 1000px) {
   body {
     background: #fff url("./img/background-img.png") no-repeat center center
       fixed;
     background-size: cover;
+  }
+
+  .hero-text {
+    width: 100%;
+  }
+
+  .hero-text h1 {
+    color: #fff;
+    font-size: 6vw;
   }
 }

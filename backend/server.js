@@ -30,10 +30,14 @@ app.get("/api/config/paypal", (req, res) => {
 
 const __dirname = path.resolve(); //returns current folder
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
+app.use(express, static(path.join(__dirname, "/frontend/build")));
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname, "/frontend/build/index.html"))
+);
 
-app.get("/", (req, res) => {
-  res.send("Server is ready");
-});
+// app.get("/", (req, res) => {
+//   res.send("Server is ready");
+// });
 
 // error handler middleware
 app.use((err, req, res, next) => [

@@ -42,8 +42,8 @@ export default function App() {
           <div>
             <Link className="brand" to="/">
               folia
-              <img src={leafImg} alt="" />
             </Link>
+            <img src={leafImg} alt="" />
           </div>
           <div>
             <Link to="/cart">
@@ -117,7 +117,31 @@ export default function App() {
           />
           <Route exact path="/" component={HomeView} />
         </main>
-        <footer className="row center">All rights reserved</footer>
+        <footer className="footer-content row center">
+          <div className="social-media">
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+              <i className="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+              <i className="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.pinterest.com">
+              <i
+                className="fab fa-pinterest"
+                target="_blank"
+                rel="noreferrer"
+              ></i>
+            </a>
+          </div>
+          <p>Folia LLC &copy; 2021</p>
+        </footer>
       </div>
     </BrowserRouter>
   );

@@ -24,13 +24,11 @@ import OrderHistoryAdminView from "./views/OrderHistoryAdminView";
 import leafImg from "./img/leaf.png";
 
 export default function App() {
-  const cart = useSelector((state) => state.cart);
-  const { cartItems } = cart;
-
-  const userSignin = useSelector((state) => state.userSignin);
-  const { userInfo } = userSignin;
+  const { cartItems } = useSelector((state) => state.cart);
+  const { userInfo } = useSelector((state) => state.userSignin);
 
   const dispatch = useDispatch();
+
   const signoutHandler = () => {
     dispatch(signout());
   };

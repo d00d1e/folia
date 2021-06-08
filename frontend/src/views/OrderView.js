@@ -11,12 +11,14 @@ import MessageBox from "../components/MessageBox";
 
 export default function OrderView(props) {
   const cart = useSelector((state) => state.cart);
+
   if (!cart.paymentMethod) {
     props.history.push("/payment");
   }
 
-  const orderCreate = useSelector((state) => state.orderCreate);
-  const { loading, success, error, order } = orderCreate;
+  const { loading, success, error, order } = useSelector(
+    (state) => state.orderCreate
+  );
 
   const toPrice = (num) => Number(num.toFixed(2));
   cart.itemsPrice = toPrice(
@@ -27,6 +29,7 @@ export default function OrderView(props) {
   cart.totalPrice = cart.itemsPrice + cart.taxPrice + cart.shippingPrice;
 
   const dispatch = useDispatch();
+
   const placeOrderHandler = () => {
     dispatch(createOrder({ ...cart, orderItems: cart.cartItems }));
   };
@@ -39,7 +42,7 @@ export default function OrderView(props) {
   }, [dispatch, order, props.history, success]);
 
   return (
-    <div>
+    <div className="container">
       <CheckoutSteps step1 step2 step3 step4 />
       <div className="row top">
         <div className="col-2">

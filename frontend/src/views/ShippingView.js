@@ -4,13 +4,12 @@ import { saveShippingAddress } from "../actions/cartActions";
 import CheckoutSteps from "../components/CheckoutSteps";
 
 export default function ShippingView(props) {
-  const userSignin = useSelector((state) => state.userSignin);
-  const { userInfo } = userSignin;
+  const { userInfo } = useSelector((state) => state.userSignin);
+  const { shippingAddress } = useSelector((state) => state.cart);
+
   if (!userInfo) {
     props.history.push("/signin");
   }
-  const cart = useSelector((state) => state.cart);
-  const { shippingAddress } = cart;
 
   const [fullName, setFullName] = useState(shippingAddress.fullName);
   const [address, setAddress] = useState(shippingAddress.address);
@@ -19,6 +18,7 @@ export default function ShippingView(props) {
   const [country, setCountry] = useState(shippingAddress.country);
 
   const dispatch = useDispatch();
+
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(
@@ -28,7 +28,7 @@ export default function ShippingView(props) {
   };
 
   return (
-    <div>
+    <div className="container">
       <CheckoutSteps step1 step2 />
       <form className="form" onSubmit={submitHandler}>
         <div>

@@ -35,7 +35,7 @@ export default function ProductView(props) {
           <Link to="/">
             <i className="fas fa-chevron-left"></i> Back to Products
           </Link>
-          <div className="row top tex-center">
+          <div className="row top text-center">
             <div className="col-2">
               <img className="large" src={product.image} alt={product.name} />
             </div>

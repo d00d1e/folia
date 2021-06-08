@@ -16,27 +16,21 @@ export default function OrderDetailsView(props) {
   const orderId = props.match.params.id;
   const [sdkReady, setSdkReady] = useState(false);
 
-  const orderDetails = useSelector((state) => state.orderDetails);
-  const { order, loading, error } = orderDetails;
-
-  const userSignin = useSelector((state) => state.userSignin);
-  const { userInfo } = userSignin;
-
-  const orderPay = useSelector((state) => state.orderPay);
+  const { order, loading, error } = useSelector((state) => state.orderDetails);
+  const { userInfo } = useSelector((state) => state.userSignin);
   const {
     loading: loadingPay,
     error: errorPay,
     success: successPay,
-  } = orderPay;
-
-  const orderDeliver = useSelector((state) => state.orderDeliver);
+  } = useSelector((state) => state.orderPay);
   const {
     loading: loadingDeliver,
     error: errorDeliver,
     success: successDeliver,
-  } = orderDeliver;
+  } = useSelector((state) => state.orderDeliver);
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     const addPayPalScript = async () => {
       const { data } = await Axios.get("/api/config/paypal"); //paypal client id from backend
@@ -82,7 +76,7 @@ export default function OrderDetailsView(props) {
   ) : error ? (
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
-    <div>
+    <div className="container">
       <h4>Order #{order._id}</h4>
       <div className="row top">
         <div className="col-2">

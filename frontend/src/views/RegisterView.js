@@ -11,14 +11,16 @@ export default function RegisterView(props) {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const userRegister = useSelector((state) => state.userRegister);
-  const { userInfo, loading, error } = userRegister;
+  const { userInfo, loading, error } = useSelector(
+    (state) => state.userRegister
+  );
 
   const redirect = props.location.search
     ? props.location.search.split("=")[1]
     : "/";
 
   const dispatch = useDispatch();
+
   const submitHandler = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {

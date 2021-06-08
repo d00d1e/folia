@@ -13,25 +13,25 @@ import {
 } from "../constants/productConstants";
 
 export default function ProductListView(props) {
-  const productList = useSelector((state) => state.productList);
-  const { loading, error, products } = productList;
+  const { loading, error, products } = useSelector(
+    (state) => state.productList
+  );
 
-  const productCreate = useSelector((state) => state.productCreate);
   const {
     loading: loadingCreate,
     error: errorCreate,
     success: successCreate,
     product: createdProduct,
-  } = productCreate;
+  } = useSelector((state) => state.productCreate);
 
-  const productDelete = useSelector((state) => state.productDelete);
   const {
     loading: loadingDelete,
     error: errorDelete,
     success: successDelete,
-  } = productDelete;
+  } = useSelector((state) => state.productDelete);
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (successCreate) {
       dispatch({ type: PRODUCT_CREATE_RESET });
@@ -54,7 +54,7 @@ export default function ProductListView(props) {
   };
 
   return (
-    <div>
+    <div className="container">
       <div className="row">
         <h1>Products</h1>
         <button className="primary" onClick={createHandler}>

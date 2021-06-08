@@ -1,8 +1,6 @@
 import React from "react";
 
-export default function Rating(props) {
-  const { rating, numReviews } = props;
-
+export default function Rating({ rating, numReviews }) {
   return (
     <div className="rating">
       <span>

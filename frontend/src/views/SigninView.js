@@ -9,14 +9,14 @@ export default function SigninView(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const userSignin = useSelector((state) => state.userSignin);
-  const { userInfo, loading, error } = userSignin;
+  const { userInfo, loading, error } = useSelector((state) => state.userSignin);
 
   const redirect = props.location.search
     ? props.location.search.split("=")[1]
     : "/";
 
   const dispatch = useDispatch();
+
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(signin(email, password));

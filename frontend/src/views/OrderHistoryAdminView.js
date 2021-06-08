@@ -6,17 +6,17 @@ import MessageBox from "../components/MessageBox";
 import { ORDER_DELETE_RESET } from "../constants/orderConstants";
 
 export default function OrderHistoryAdminView(props) {
-  const orderListAdmin = useSelector((state) => state.orderListAdmin);
-  const { loading, error, orders } = orderListAdmin;
-
-  const orderDelete = useSelector((state) => state.orderDelete);
+  const { loading, error, orders } = useSelector(
+    (state) => state.orderListAdmin
+  );
   const {
     loading: loadingDelete,
     error: errorDelete,
     success: successDelete,
-  } = orderDelete;
+  } = useSelector((state) => state.orderDelete);
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch({ type: ORDER_DELETE_RESET });
     dispatch(listOrderAdmin());
@@ -29,7 +29,7 @@ export default function OrderHistoryAdminView(props) {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Orders</h1>
       {loadingDelete && <LoadingBox />}
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}

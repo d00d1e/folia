@@ -9,9 +9,12 @@ import { listProducts } from "../actions/productActions";
 import Hero from "./Hero";
 
 export default function HomeView() {
+  //get obj from redux store
+  const { loading, error, products } = useSelector(
+    (state) => state.productList
+  );
+
   const dispatch = useDispatch(); //dispatch redux action inside components
-  const productList = useSelector((state) => state.productList); //get obj from redux store
-  const { loading, error, products } = productList;
 
   useEffect(() => {
     dispatch(listProducts());
@@ -27,7 +30,7 @@ export default function HomeView() {
         ) : error ? (
           <MessageBox variant="danger">{error}</MessageBox>
         ) : (
-          <div className="row center">
+          <div className="container row center">
             {products.map((product) => (
               <Product key={product._id} product={product} />
             ))}

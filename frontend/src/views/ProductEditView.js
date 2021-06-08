@@ -16,17 +16,18 @@ export default function ProductEditView(props) {
   const [countInStock, setCountInStock] = useState("");
   const [description, setDescription] = useState("");
 
-  const productDetails = useSelector((state) => state.productDetails);
-  const { loading, error, product } = productDetails;
+  const { loading, error, product } = useSelector(
+    (state) => state.productDetails
+  );
 
-  const productUpdate = useSelector((state) => state.productUpdate);
   const {
     loading: loadingUpdate,
     error: errorUpdate,
     success: successUpdate,
-  } = productUpdate;
+  } = useSelector((state) => state.productUpdate);
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (successUpdate) {
       props.history.push("/productlist");

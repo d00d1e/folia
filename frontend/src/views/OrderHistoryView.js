@@ -5,8 +5,8 @@ import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 
 export default function OrderHistoryView(props) {
-  const orderList = useSelector((state) => state.orderList);
-  const { loading, error, orders } = orderList;
+  const { loading, error, orders } = useSelector((state) => state.orderList);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export default function OrderHistoryView(props) {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="container">
       <h1>Order History</h1>
       {loading ? (
         <LoadingBox />

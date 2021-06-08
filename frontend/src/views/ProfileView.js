@@ -11,19 +11,17 @@ export default function ProfileView() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const userSignin = useSelector((state) => state.userSignin);
-  const { userInfo } = userSignin;
-  const userDetails = useSelector((state) => state.userDetails);
-  const { loading, error, user } = userDetails;
+  const { userInfo } = useSelector((state) => state.userSignin);
+  const { loading, error, user } = useSelector((state) => state.userDetails);
 
-  const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
   const {
     success: successUpdate,
     error: errorUpdate,
     loading: loadingUpdate,
-  } = userUpdateProfile;
+  } = useSelector((state) => state.userUpdateProfile);
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (!user) {
       dispatch({ type: USER_UPDATE_PROFILE_RESET });

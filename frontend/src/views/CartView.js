@@ -7,14 +7,15 @@ import MessageBox from "../components/MessageBox";
 import { addToCart, removeFromCart } from "../actions/cartActions";
 
 export default function CartView(props) {
+  const { cartItems } = useSelector((state) => state.cart);
+
   const productId = props.match.params.id;
   //get qty value from route
   const qty = props.location.search
     ? Number(props.location.search.split("=")[1])
     : 1;
+
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart);
-  const { cartItems } = cart;
 
   useEffect(() => {
     if (productId) {
@@ -31,7 +32,7 @@ export default function CartView(props) {
   };
 
   return (
-    <div className="row top">
+    <div className="container row top">
       <div className="col-2">
         <Link to="/">
           <i className="fas fa-chevron-left"></i> Continue Shopping

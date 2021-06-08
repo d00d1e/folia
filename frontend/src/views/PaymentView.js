@@ -4,20 +4,24 @@ import { savePaymentMethod } from "../actions/cartActions";
 import CheckoutSteps from "../components/CheckoutSteps";
 
 export default function PaymentVew(props) {
-  const cart = useSelector((state) => state.cart);
-  const { shippingAddress } = cart;
+  const { shippingAddress } = useSelector((state) => state.cart);
+
   if (!shippingAddress.address) {
     props.history.push("/shipping");
   }
+
   const [paymentMethod, setPaymentMethod] = useState("PayPal");
+
   const dispatch = useDispatch();
+
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(savePaymentMethod(paymentMethod));
     props.history.push("/order");
   };
+
   return (
-    <div>
+    <div className="container">
       <CheckoutSteps step1 step2 step3></CheckoutSteps>
       <form className="form" onSubmit={submitHandler}>
         <div>

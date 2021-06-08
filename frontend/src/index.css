@@ -53,7 +53,7 @@ header {
 
 main {
   grid-area: main;
-  padding: 0 2rem;
+  padding: 0;
 }
 
 footer {
@@ -63,6 +63,7 @@ footer {
   max-height: 100%;
   color: #fff;
   background-color: #1b352c;
+  margin-top: 1rem;
 }
 
 .footer-content {
@@ -198,6 +199,12 @@ button.small {
   font-size: 1.2rem;
 }
 
+/* CONTAINER */
+.container {
+  max-width: 90%;
+  margin: auto;
+}
+
 /* HEADER */
 header {
   padding: 0 2.3rem;
@@ -246,10 +253,12 @@ a.brand {
 
 .col-1 {
   flex: 1 1 30rem;
+  padding: 2rem;
 }
 
 .col-2 {
   flex: 2 1 40rem;
+  padding: 2rem;
 }
 
 .min-30 {
@@ -272,7 +281,7 @@ img.medium {
 }
 
 img.large {
-  max-width: 85rem;
+  max-width: 80rem;
   width: 100%;
 }
 

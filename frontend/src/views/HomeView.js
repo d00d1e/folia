@@ -6,7 +6,7 @@ import MessageBox from "../components/MessageBox";
 
 import { useSelector, useDispatch } from "react-redux";
 import { listProducts } from "../actions/productActions";
-import Hero from "./Hero";
+import Hero from "../components/Hero";
 
 export default function HomeView() {
   //get obj from redux store
@@ -23,7 +23,7 @@ export default function HomeView() {
   return (
     <>
       <Hero />
-      <h2 className="home-header">The Folia collection</h2>
+      <h2 className="home-header">The Folia Collection</h2>
       <div>
         {loading ? (
           <LoadingBox />

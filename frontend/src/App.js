@@ -39,12 +39,12 @@ export default function App() {
         <header className="row">
           <div>
             <Link className="brand" to="/">
-              folia
+              f<img src={leafImg} alt="" />
+              lia
             </Link>
-            <img src={leafImg} alt="" />
           </div>
-          <div>
-            <Link to="/cart">
+          <div className="nav">
+            <Link className="nav-item" to="/cart">
               Cart
               {cartItems.length > 0 && (
                 <sup className="badge">{cartItems.length}</sup>
@@ -52,7 +52,7 @@ export default function App() {
             </Link>
             {userInfo ? (
               <div className="dropdown">
-                <Link to="#">
+                <Link className="nav-item" to="#">
                   {userInfo.name} <i className="fa fa-caret-down"></i>
                 </Link>
                 <ul className="dropdown-content">
@@ -74,7 +74,7 @@ export default function App() {
             )}
             {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
-                <Link to="#admin">
+                <Link className="nav-item" to="#admin">
                   Admin <i className="fa fa-caret-down"></i>
                 </Link>
                 <ul className="dropdown-content">

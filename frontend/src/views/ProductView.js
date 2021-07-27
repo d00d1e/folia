@@ -40,7 +40,7 @@ export default function ProductView(props) {
               <img className="large" src={product.image} alt={product.name} />
             </div>
             <div className="col-1">
-              <ul>
+              <ul className="product-info">
                 <li>
                   <h1>{product.name}</h1>
                 </li>
@@ -68,7 +68,7 @@ export default function ProductView(props) {
             </div>
             <div className="col-1">
               <div className="card card-body">
-                <ul>
+                <ul className="add-to-cart">
                   <li>
                     <div className="row">
                       <div>Price</div>

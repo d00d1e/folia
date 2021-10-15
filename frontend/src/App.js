@@ -39,8 +39,8 @@ export default function App() {
         <header className="row">
           <div>
             <Link className="brand" to="/">
-              f<img src={leafImg} alt="" />
-              lia
+              folia
+              {/* <img src={leafImg} alt="" /> */}
             </Link>
           </div>
           <div className="nav">
@@ -78,18 +78,18 @@ export default function App() {
                   Admin <i className="fa fa-caret-down"></i>
                 </Link>
                 <ul className="dropdown-content">
-                  <li>
+                  {/* <li>
                     <Link to="/dashboard">Dashboard</Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to="/productlist">Products</Link>
                   </li>
                   <li>
                     <Link to="/orderlist">Orders</Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to="/userlist">Users</Link>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             )}

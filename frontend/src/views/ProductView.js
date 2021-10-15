@@ -59,10 +59,10 @@ export default function ProductView(props) {
                   <i className="fas fa-tag"></i> ${product.price}
                 </li>
                 <li>
-                  <p>{product.description}</p>
+                  <i className="fas fa-sun"></i> {product.lighting}
                 </li>
                 <li>
-                  <i className="fas fa-sun"></i> {product.lighting}
+                  <p>{product.description}</p>
                 </li>
               </ul>
             </div>
